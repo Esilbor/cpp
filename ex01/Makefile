@@ -6,8 +6,8 @@ CFLAGS = -Werror -Wextra -Werror -std=c++98
 
 
 # include
-NAME_FILES = ./main.cpp \
-./PhoneBook.class.cpp
+NAME_FILES = ./src/main.cpp \
+./src/PhoneBook.class.cpp
 
 S_SRC = $(NAME_FILES)
 C_SRC = $(CLIENT_FILES)

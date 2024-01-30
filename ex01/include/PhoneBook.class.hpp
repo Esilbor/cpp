@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/29 18:19:18 by bbresil          ###   ########.fr       */
+/*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
+/*   Updated: 2024/01/30 12:13:25 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef PHONEBOOK_CLASS_HPP
+#define PHONEBOOK_CLASS_HPP
 
-int	main(int argc, char **argv)
+
+#include <string>
+#include <iostream>
+#include "./Contact.class.hpp"
+
+class PhoneBook
 {
-	PhoneBook repertoire;
-	return (0);
-}
+	private:
+		Contact contactList[8];
+	public:
+		PhoneBook(/* args */);
+		~PhoneBook();
+		int	setContactList(std::string contact);
+		int	getContactList(void);
+};
+
+#endif
