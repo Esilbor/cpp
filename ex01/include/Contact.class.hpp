@@ -6,12 +6,12 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:10:43 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 12:13:08 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:31:09 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_HPP
-#define CONTACT_CLASS_HPP
+#ifndef DEF_CONTACT
+#define DEF_CONTACT
 
 
 #include <string>

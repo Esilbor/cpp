@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 17:52:40 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/01 15:49:19 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/01 17:04:41 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cpp00.hpp"
+#include <iostream>
+#include "Point_Class.hpp"
 
-int	main(int argc, char **argv)
+/*
+	Les trois points essentiels en POO sont:
+	-	l'encapsulation
+	-	l'heritage
+	-	le polymorphisme
+*/
+
+
+
+int	main()
 {
-	PhoneBook repertoire;
-	return (0);
+	Point	p{}; // appel au constructeur
+	// Point	p2{p}; // appel au constructeur par copie
+	p.i++;
+	std::cout << "ici dans le main i vaut: " << p.i << std::endl;
+	return (0); //la fin de la fonction marque l'appel du destructeur
 }

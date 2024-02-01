@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 17:52:40 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/01 15:29:43 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/01 15:50:55 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cpp00.hpp"
+#include <iostream>
 
-int	main(int argc, char **argv)
+
+// dans une structure les donnees sont publiques
+struct Product
 {
-	PhoneBook repertoire;
+	std::string	name;
+	float		price;
+	bool		available;
+};
+
+
+int	main()
+{
+	struct Product item{"pencil", 1.5f, true};
+
+	std::cout << "Price of " << item.name << ": " << item.price << " euros" << std::endl;
+
 	return (0);
 }

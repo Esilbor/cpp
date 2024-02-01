@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   window_class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 17:52:40 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/01 17:24:29 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/01 17:25:59 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cpp00.hpp"
+#ifndef	DEF_WINDOW
+#define	DEF_WINDOW
 
-int	main(int argc, char **argv)
+class window_class
 {
-	PhoneBook repertoire;
-	return (0);
+private:
+	/* data */
+public:
+	window_class(/* args */);
+	~window_class();
+};
+
+window_class::window_class(/* args */)
+{
 }
+
+window_class::~window_class()
+{
+}
+
+
+#endif

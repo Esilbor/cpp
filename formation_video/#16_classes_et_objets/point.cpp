@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 17:52:40 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/01 16:15:26 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/01 16:58:56 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cpp00.hpp"
+#include "Point_Class.hpp"
+#include <iostream>
 
-int	main(int argc, char **argv)
+/*
+**	definition du constructeur et destructeur
+**
+*/
+
+Point::Point()
 {
-	PhoneBook repertoire;
-	return (0);
+	std::cout << "Creation d'un point." << this << std::endl;
+}
+
+// Point::Point(const Point& p)
+// {
+// 	std::cout << "Creation d'un point par copie." << p.i << std::endl;
+// }
+Point::~Point()
+{
+	std::cout << "je suis le destructeur" << std::endl;
 }

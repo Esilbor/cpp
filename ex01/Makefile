@@ -4,34 +4,30 @@ NAME = phonebook
 CC = g++
 CFLAGS = -Werror -Wextra -Werror -std=c++98
 
+# directories
+SRC_DIR = ./src
+BIN_DIR = ./bin
 
-# include
-NAME_FILES = ./src/main.cpp \
-./src/PhoneBook.class.cpp
+# source files
+NAME_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 
-S_SRC = $(NAME_FILES)
-C_SRC = $(CLIENT_FILES)
+# object files
+S_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.o,$(NAME_FILES))
 
-S_OBJ = $(S_SRC:.c=.o)
-C_OBJ = $(C_SRC:.c=.o)
+all : $(BIN_DIR)/$(NAME)
 
-all : $(NAME)
-
-%.o : %.c
+$(BIN_DIR)/%.o : $(SRC_DIR)/%.cpp
+	@mkdir -p $(BIN_DIR)
 	$(CC) -o $@ -c $^ $(CFLAGS)
 
-$(NAME) : $(S_OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(S_OBJ)
-
+$(BIN_DIR)/$(NAME) : $(S_OBJ)
+	@$(CC) $(CFLAGS) -o $@ $(S_OBJ)
 
 clean :
-	@rm -rf $(S_OBJ) $(C_OBJ) $(S_OBJ_B) $(C_OBJ_B)
+	@rm -rf $(BIN_DIR)
 
 fclean : clean
-	@rm -rf $(NAME)
 
 re : fclean all
 
-rebonus : fclean re bonus
-
-.PHONY: re clean fclean all rebonus bonus
+.PHONY: re clean fclean all
