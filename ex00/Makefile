@@ -1,7 +1,7 @@
 # project
 NAME = megaphone
 # compiler
-CC = c++
+CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
@@ -11,16 +11,16 @@ NAME_FILES = ./megaphone.cpp
 S_SRC = $(NAME_FILES)
 C_SRC = $(CLIENT_FILES)
 
-S_OBJ = $(S_SRC:.c=.o)
-C_OBJ = $(C_SRC:.c=.o)
+S_OBJ = $(S_SRC:.cpp=.o)
+C_OBJ = $(C_SRC:.cpp=.o)
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) -o $@ -c $^ $(CFLAGS)
+%.o : %.cpp
+	$(CXX) -o $@ -c $^ $(CFLAGS)
 
 $(NAME) : $(S_OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(S_OBJ)
+	@$(CXX) $(CFLAGS) -o $(NAME) $(S_OBJ)
 
 
 clean :
