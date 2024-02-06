@@ -14,13 +14,13 @@ NAME_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 # object files
 S_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.o,$(NAME_FILES))
 
-all : $(BIN_DIR)/$(NAME)
+all : $(NAME)
 
 $(BIN_DIR)/%.o : $(SRC_DIR)/%.cpp
 	@mkdir -p $(BIN_DIR)
 	$(CC) -o $@ -c $^ $(CFLAGS)
 
-$(BIN_DIR)/$(NAME) : $(S_OBJ)
+$(NAME) : $(S_OBJ)
 	@$(CC) $(CFLAGS) -o $@ $(S_OBJ)
 
 clean :

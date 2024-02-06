@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:24:29 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/02 15:41:25 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/06 11:05:09 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ class Window
 {
 	public:
 		Window();
+		~Window();
 		Window(std::string t, int w, int h);
+		void	run() const;
 
 	private:
 		std::string title;

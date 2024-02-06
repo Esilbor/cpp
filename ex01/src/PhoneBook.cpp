@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 17:24:36 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/02 16:44:21 by bbresil          ###   ########.fr       */
+/*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/06 20:31:13 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/cpp00.hpp"
 
-#include "Window.hpp"
-#include <iostream>
-
-int main()
+PhoneBook::PhoneBook()
 {
-	// Window app{};
-	Window newapp("Mon programme GUI", 640, 480);
-	newapp.run();
-	return (0);
+	return;
+}
+
+PhoneBook::~PhoneBook()
+{
+	return;
+}
+
+void PhoneBook::add_contact(PhoneBook repertoire)
+{
+	std::cout << "Enter contact's first name : ";
+	std::getline(std::cin, PhoneBook::contact_list[0]->first_name);
+	std::cout << "you entered the first name : " << PhoneBook::contact_list[0]->first_name << std::endl;
+
+
+	return;
 }

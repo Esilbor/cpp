@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 18:06:54 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/06 20:20:37 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,28 @@
 
 #include <string>
 #include <iostream>
-#include "./Contact.class.hpp"
-#include <array> // for tabs of fixed sizes
+#include <iomanip>
+#include "./Contact.hpp"
+
+enum e_token
+{
+	first,
+	last,
+	nick,
+	phone,
+	dark
+};
 
 class PhoneBook
 {
 	private:
-		// Contact contactList[8];
-		std::array<Contact, 8> contactList{};
+		Contact contact_list[8];
 	public:
-		PhoneBook(/* args */);
+		PhoneBook();
 		~PhoneBook();
-		int	setContactList(std::string contact);
-		int	getContactList(void);
+		void	add_contact(PhoneBook repertoire);
+		// int	set_contact(e_token token, std::string info);
+		// int	getContactList(void);
 };
 
 #endif

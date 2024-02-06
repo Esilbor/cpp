@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:18:28 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 14:31:22 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/06 11:59:20 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include "./PhoneBook.class.hpp"
-#include "./Contact.class.hpp"
+#include <iomanip>
+#include "./PhoneBook.hpp"
+#include "./Contact.hpp"
 
 #endif

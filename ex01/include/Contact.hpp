@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:10:43 by bbresil           #+#    #+#             */
-/*   Updated: 2024/01/30 14:31:09 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/06 17:59:45 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,23 @@
 
 #include <string>
 #include <iostream>
-#include "./PhoneBook.class.hpp"
+#include <iomanip>
+#include "./PhoneBook.hpp"
 
 class	Contact
 {
 	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickname;
-		std::string	phoneNumber;
-		std::string	darkestSecret;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nick_name;
+		std::string	phone_number;
+		std::string	darkest_secret;
 
 	public:
-		Contact(/*args*/);
+		Contact();
 		~Contact();
-		int			setContactInfo(std::string token);
-		std::string	getContactInfo(std::string token);
+		// int	setContactInfo(std::string token, std::string value);
+		// std::string	getContactInfo(std::string token);
 };
 
 #endif
