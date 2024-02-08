@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/06 20:20:51 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:27:48 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ void	user_entry(std::string& user_input, PhoneBook repertoire)
 	{
 		std::cout << "please use ADD, SEARCH or EXIT" << std::endl;
 		std::getline(std::cin, user_input);
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::cout << "ctrl + D in USER ENTRY";
+			return ;
+		}
 	}
-	if (user_input == "ADD")
+	if (user_input == "ADD" && !std::cin.eof())
 	{
-		std::cout << "you entered: " << user_input <<std::endl;
-		repertoire.add_contact(repertoire);
-
-
+		repertoire.addContact();
 	}
 	return ;
 }
@@ -44,6 +47,12 @@ int	main(int argc, char **argv)
 	while (user_input != "EXIT")
 	{
 		std::getline(std::cin, user_input);
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::cout << "ctrl + D in MAIN";
+			return (1);
+		}
 		user_entry(user_input, repertoire);
 	}
 	return (0);

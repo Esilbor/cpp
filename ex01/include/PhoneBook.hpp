@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/06 20:20:37 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:29:49 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,19 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "./Contact.hpp"
-
-enum e_token
-{
-	first,
-	last,
-	nick,
-	phone,
-	dark
-};
 
 class PhoneBook
 {
 	private:
 		Contact contact_list[8];
+		int	i;
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	add_contact(PhoneBook repertoire);
-		// int	set_contact(e_token token, std::string info);
-		// int	getContactList(void);
+		void addContact(void);
+		void readInput(const std::string& prompt, e_token token);
 };
 
 #endif
