@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/08 17:29:49 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/09 15:02:16 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class PhoneBook
 		~PhoneBook();
 		void addContact(void);
 		void readInput(const std::string& prompt, e_token token);
+		void searchContact(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:10:43 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/08 17:29:42 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/09 16:56:05 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class	Contact
 
 		void	set_contact_info(e_token token, std::string& value);
 		std::string	get_contact_info(e_token token);
+		void	get_contact_info();
 };
 
 #endif

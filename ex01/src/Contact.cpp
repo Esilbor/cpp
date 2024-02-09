@@ -6,15 +6,13 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:56:22 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/08 16:27:29 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/09 18:30:07 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cpp00.hpp"
 
 Contact::Contact()
-	: first_name("xxx"), last_name("xxx"), nick_name("xxx"), phone_number("xxx"),
-	darkest_secret("xxx")
 {
 	return;
 }
@@ -46,6 +44,18 @@ void	Contact::set_contact_info(e_token token, std::string& value)
 		default:
 			std::cout << "wrong token entered" << std::endl;
 	}
+}
+
+void Contact::get_contact_info()
+{
+	std::string trunc_first_name = first_name.substr(0, 10);
+	std::string trunc_last_name = last_name.substr(0, 10);
+	std::string trunc_nick_name = nick_name.substr(0, 10);
+
+	std::cout << "|" << std::setw(10) << trunc_first_name
+			<< "|" << std::setw(10) << trunc_last_name
+			<< "|" << std::setw(10) << trunc_nick_name
+			<< "|" << std::endl;
 }
 
 std::string	Contact::get_contact_info(e_token token)
