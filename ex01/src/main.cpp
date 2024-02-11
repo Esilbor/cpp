@@ -6,12 +6,11 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/09 17:32:09 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/11 18:33:13 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cpp00.hpp"
-#include <string.h>
 
 void	user_entry(std::string& user_input, PhoneBook& repertoire)
 {
@@ -27,6 +26,7 @@ void	user_entry(std::string& user_input, PhoneBook& repertoire)
 		repertoire.addContact();
 	if (user_input == "SEARCH" && !std::cin.eof())
 		repertoire.searchContact();
+	user_input = "";
 	return ;
 }
 
@@ -40,18 +40,11 @@ int	main(int argc, char **argv)
 	std::string	user_input;
 	PhoneBook repertoire;
 	std::cout << "Welcome to your Awesome PhoneBook!" << std::endl;
-	while (user_input.compare("EXIT"))
+	while (1)
 	{
 		user_entry(user_input, repertoire);
-		if (user_input == "EXIT" && !std::cin.eof())
+		if (user_input == "EXIT" || std::cin.eof()) // if ctrl+D has been detected
 		{
-			return (1);
-		}
-		getline(std::cin, user_input);
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			std::cerr << "EOF detected Bye Bye Baby!" << std::endl;
 			return (1);
 		}
 	}

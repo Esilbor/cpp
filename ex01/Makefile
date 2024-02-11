@@ -2,7 +2,7 @@
 NAME = phonebook
 # compiler
 CC = g++
-CFLAGS = -Werror -Wextra -Werror -std=c++98
+CFLAGS = -Werror -Wextra -Werror -std=c++98 -g3
 
 # directories
 SRC_DIR = ./src

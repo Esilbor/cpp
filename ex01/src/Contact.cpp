@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:56:22 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/09 18:30:07 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/11 18:40:43 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,25 @@ std::string	Contact::get_contact_info(e_token token)
 	}
 }
 
+void	Contact::display_this_contact()
+{
+	std::cout << std::endl;
+	std::cout << "First Name: " << first_name << std::endl;
+	std::cout << "Last Name: " << last_name << std::endl;
+	std::cout << "Nickname: " << nick_name << std::endl;
+	std::cout << "Phone Number: " << phone_number << std::endl;
+	std::cout << "Darkest Secret: " << darkest_secret << std::endl;
+	std::cout << std::endl;
+
+
+}
+
+
+bool	Contact::contact_is_valid()
+{
+	if (!first_name.empty())
+	{
+		return (true);
+	}
+	return (false);
+}
