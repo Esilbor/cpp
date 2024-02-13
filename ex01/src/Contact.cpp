@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:56:22 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/12 14:26:48 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/12 16:15:11 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact()
 	return;
 }
 
-void	Contact::set_contact_info(e_token token, std::string& value)
+void	Contact::setContactInfo(e_token token, std::string& value)
 {
 	switch (token)
 	{
@@ -46,7 +46,7 @@ void	Contact::set_contact_info(e_token token, std::string& value)
 	}
 }
 
-void Contact::get_contact_info()
+void Contact::getContactInfo()
 {
 	std::string trunc_first_name = first_name.substr(0, 10);
 	std::string trunc_last_name = last_name.substr(0, 10);
@@ -65,27 +65,7 @@ void Contact::get_contact_info()
 			<< "|" << std::endl;
 }
 
-std::string	Contact::get_contact_info(e_token token)
-{
-	switch (token)
-	{
-		case FIRST:
-			return (this->first_name);
-		case LAST:
-			return (this->last_name);
-		case NICK:
-			return (this->nick_name);
-		case PHONE:
-			return (this->phone_number);
-		case DARK:
-			return (this->darkest_secret);
-		default:
-			std::cout << "wrong token entered" << std::endl;
-			return ("");
-	}
-}
-
-void	Contact::display_this_contact()
+void	Contact::displayThisContact()
 {
 	std::cout << std::endl;
 	std::cout << "First Name: " << first_name << std::endl;
@@ -98,8 +78,7 @@ void	Contact::display_this_contact()
 
 }
 
-
-bool	Contact::contact_is_valid()
+bool	Contact::contactIsValid()
 {
 	if (!first_name.empty())
 	{

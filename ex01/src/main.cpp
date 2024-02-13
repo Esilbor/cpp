@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/11 18:33:13 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/12 16:40:08 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	user_entry(std::string& user_input, PhoneBook& repertoire)
 {
-	while (user_input.compare("ADD") && user_input.compare("SEARCH")  && user_input.compare("EXIT"))
+	while (user_input.compare("ADD") && user_input.compare("SEARCH")
+			&& user_input.compare("EXIT"))
 	{
 		std::cout << "Please use ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "> ";

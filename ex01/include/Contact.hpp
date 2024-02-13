@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:10:43 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/11 19:00:45 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/12 16:15:11 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,10 @@ class	Contact
 		Contact();
 		~Contact();
 
-		void	set_contact_info(e_token token, std::string& value);
-		std::string	get_contact_info(e_token token);
-		void	get_contact_info();
-		void	display_this_contact();
-		bool	contact_is_valid();
+		void	setContactInfo(e_token token, std::string& value);
+		void	getContactInfo();
+		void	displayThisContact();
+		bool	contactIsValid();
 };
 
 #endif

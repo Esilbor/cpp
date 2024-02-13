@@ -25,17 +25,16 @@ PhoneBook::~PhoneBook()
 void	PhoneBook::readInput(const std::string& prompt, e_token token)
 {
 	std::string user_input;
-	while (user_input.empty())
+	while (user_input.empty() || containsWhitespace(user_input))
 	{
+		if (containsWhitespace(user_input))
+			std::cout << "Entries cannot contain white spaces" << std::endl;
 		std::cout << prompt;
 		getline(std::cin, user_input);
 		if (std::cin.eof())
-		{
 			return ;
-		}
 	}
-	contact_list[i].set_contact_info(token, user_input);
-
+	contact_list[i].setContactInfo(token, user_input);
 }
 
 void	PhoneBook::addContact()
@@ -55,13 +54,13 @@ void	PhoneBook::addContact()
 	i = (i + 1) % 8;
 }
 
-bool	PhoneBook::index_is_valid(int& i)
+bool	PhoneBook::indexIsValid(int& i)
 {
-	if ((i >= 0 && i <= 7) && (contact_list[i].contact_is_valid()))
+	if ((i >= 0 && i <= 7) && (contact_list[i].contactIsValid()))
 		return (true);
 	return (false);
 }
-// A REVOIR
+
 bool is_number(const std::string& str)
 {
 	for (std::size_t i = 0; i < str.length(); ++i)
@@ -81,7 +80,7 @@ void	PhoneBook::searchContact(void)
 	std::string index;
 	int i = -1;
 
-	if (!contact_list[0].contact_is_valid())
+	if (!contact_list[0].contactIsValid())
 	{
 		std::cout << "No contact in the phonebook yet!" << std::endl;
 		return ;
@@ -96,10 +95,10 @@ void	PhoneBook::searchContact(void)
 	while (j <= 7)
 	{
 		std::cout << " " << std::setw(10) << j;
-		contact_list[j].get_contact_info();
+		contact_list[j].getContactInfo();
 		j ++;
 	}
-	while (!index_is_valid(i))
+	while (!indexIsValid(i))
 	{
 		std::cout << "Enter contact's index for info: ";
 		getline(std::cin, index);
@@ -110,11 +109,23 @@ void	PhoneBook::searchContact(void)
 			return ;
 		}
 		std::istringstream iss(index);
-		if (!is_number(index) || !(iss >> i) || !index_is_valid(i))
+		if (!is_number(index) || !(iss >> i) || !indexIsValid(i))
 		{
 			std::cout << "Index invalid!" << std::endl;
 		}
 	}
-	contact_list[i].display_this_contact();
+	contact_list[i].displayThisContact();
 
+}
+
+bool PhoneBook::containsWhitespace(const std::string& str)
+{
+	for (size_t i = 0; i < str.length(); ++i)
+	{
+		if (isspace(static_cast<unsigned char>(str[i])) && str[i] != ' ')
+		{
+			return true;
+		}
+	}
+	return false;
 }
