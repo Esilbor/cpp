@@ -1,5 +1,5 @@
 # project
-NAME = phonebook
+NAME = account
 # compiler
 CC = g++
 CFLAGS = -Werror -Wextra -Werror -std=c++98 -g3
@@ -25,6 +25,7 @@ $(NAME) : $(S_OBJ)
 
 clean :
 	@rm -rf $(BIN_DIR)
+	@rm $(NAME)
 
 fclean : clean
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
+/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/12 16:40:08 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/15 09:51:15 by esilbor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	user_entry(std::string& user_input, PhoneBook& repertoire)
 		repertoire.addContact();
 	if (user_input == "SEARCH" && !std::cin.eof())
 		repertoire.searchContact();
+	if (user_input == "EXIT" && !std::cin.eof())
+		return ;
 	user_input = "";
 	return ;
 }
