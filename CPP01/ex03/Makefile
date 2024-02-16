@@ -1,11 +1,11 @@
 # project
-NAME = ex02
+NAME = ex03
 # compiler
 CC = c++
 CFLAGS = -Werror -Wextra -Werror -std=c++98 -g3
 
 # directories
-SRC_DIR = ./
+SRC_DIR = ./src
 BIN_DIR = ./bin
 
 # source files

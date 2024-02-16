@@ -1,7 +1,7 @@
 # project
 NAME = brainz
 # compiler
-CC = g++
+CC = c++
 CFLAGS = -Werror -Wextra -Werror -std=c++98 -g3
 
 # directories
