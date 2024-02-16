@@ -25,9 +25,9 @@ $(NAME) : $(S_OBJ)
 
 clean :
 	@rm -rf $(BIN_DIR)
-	@rm $(NAME)
 
 fclean : clean
+	@rm $(NAME)
 
 re : fclean all
 

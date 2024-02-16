@@ -6,19 +6,18 @@
 /*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 18:15:14 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/16 18:18:24 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/16 21:00:10 by esilbor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB()
+HumanB::HumanB() : arms(NULL)
 {
 }
-HumanB::HumanB(std::string blaze) : name(blaze)
+HumanB::HumanB(std::string blaze) : name(blaze), arms(NULL)
 {
-	
 }
 
 HumanB::~HumanB()
@@ -27,7 +26,11 @@ HumanB::~HumanB()
 
 void HumanB::attack()
 {
-	std::cout << name << " attacks with their " << arms->getType() << std::endl;
+	if (arms)
+		std::cout << name << " attacks with their " << arms->getType() << std::endl;
+	else
+		std::cout << name << " has no arms to attack with"  << std::endl;
+		
 }
 
 void HumanB::setWeapon(Weapon& gun)
