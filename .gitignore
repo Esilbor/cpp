@@ -3,3 +3,4 @@ video_intra/
 cpp_subjects/
 *.o
 bin/
+.vscode/
