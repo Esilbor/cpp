@@ -1,0 +1,5 @@
+formation_video/
+video_intra/
+cpp_subjects/
+*.o
+bin/
