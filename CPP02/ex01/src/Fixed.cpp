@@ -6,14 +6,14 @@
 /*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/21 22:41:05 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/23 12:21:40 by esilbor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 
 // constructeur de reopie
-Fixed::Fixed(const Fixed& fixed)
+Fixed::Fixed(const Fixed& fixed) /* : _value(fixed._value) */
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
@@ -22,10 +22,13 @@ Fixed::Fixed(const Fixed& fixed)
 // convert an int into a fixed-point number
 Fixed::Fixed(const int nb) : _value(nb << _bits)
 {
+	std::cout << "Int constructor called" << std::endl;
+
 }
 // convert a float into a fixed-point number
 Fixed::Fixed(const float nb) : _value( static_cast<int>(nb * (1 << _bits)))
 {
+	std::cout << "Float constructor called" << std::endl;
 	
 }
 	
@@ -54,7 +57,7 @@ Fixed::~Fixed()
 
 int	Fixed::getRawBits (void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (_value);
 }
 void Fixed::setRawBits(int const raw)
@@ -62,18 +65,20 @@ void Fixed::setRawBits(int const raw)
 	this->_value = raw;
 }
 
+// return a float from a fixed-point value
 float Fixed::toFloat (void) const
 {
-	return (static_cast<float>(_value));
+	return (static_cast<float>(_value) / static_cast<float>(1 << _bits));
 }
+
+// convert fixed_point nb to an int
 int Fixed::toInt (void) const
 {
 	return (_value >> _bits);
 }
 
-
-
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
-	
+	os << fixed.toFloat();
+	return (os);
 }
