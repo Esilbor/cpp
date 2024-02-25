@@ -1,5 +1,5 @@
 # project
-NAME = ex00
+NAME = ex01
 # compiler
 CC = c++
 CFLAGS = -Werror -Wextra -Werror -std=c++98 -g3
