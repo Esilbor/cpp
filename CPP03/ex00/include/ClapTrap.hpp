@@ -16,6 +16,15 @@
 #include <string>
 
 #define VALMAX 999
+#define SPEAKER 1
+
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[33m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
 
 class ClapTrap
 {
@@ -33,6 +42,7 @@ public:
 
 	void	setHitPoint(unsigned int nb);
 	void	setEnergyPoint(unsigned int nb);
+	void	setAttackDamage(unsigned int nb);
 	ClapTrap& getClapTrap(std::string& name);
 	unsigned int	getHitPoint() const;
 	unsigned int getEnergyPoint() const;
@@ -44,6 +54,7 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	void beRepaired(ClapTrap& buddy, unsigned int amount);
+	void verbose() const;
 };
 
 #endif

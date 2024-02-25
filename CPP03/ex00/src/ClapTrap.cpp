@@ -15,13 +15,13 @@
 ClapTrap::ClapTrap()
 : _name("Bob"), _hitPoints(10), _energyPoints(10), _attackDamage (0)
 {
-	std::cout << "Default ClapTrap Bob has been created" << std::endl;
+	std::cout << CYAN "Default ClapTrap Bob has been created" RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage (0)
 {
-	std::cout << "ClapTrap " << this->getName() << " has been created" << std::endl;
+	std::cout << CYAN "ClapTrap " << this->getName() << " has been created" RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& clapCopy)
@@ -44,7 +44,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& clapB)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << this->getName() << " has been terminated!" << std::endl;
+	std::cout << RED "ClapTrap " << this->getName() << " has been terminated!" RESET << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -52,9 +52,9 @@ void ClapTrap::attack(const std::string& target)
 	if (_hitPoints && _energyPoints)
 	{
 		unsigned int damage = this->getAttackDamage();
-		std::cout << "ClapTrap " << _name << " fakes an attack on " << target
-		<< ", it would have caused " << damage << " points of damage!" << std::endl;
-		std::cout << _name << " loses 1 energy point" << std::endl;
+		std::cout << BLUE "ClapTrap " << _name << " fakes an attack on " << target
+		<< ", it would have caused " << damage << " points of damage!" RESET << std::endl;
+		std::cout << _name << RED " loses 1 energy point" RESET << std::endl;
 		_energyPoints--;
 	}
 	else
@@ -71,10 +71,10 @@ void ClapTrap::attack(ClapTrap& target)
 	if (_hitPoints && _energyPoints)
 	{
 		unsigned int damage = this->getAttackDamage();
-		std::cout << "ClapTrap " << _name << " attacks " << target.getName()
-		<< ", it caused " << damage << " hit points of damage!" << std::endl;
+		std::cout << YELLOW "ClapTrap " << _name << " attacks " << target.getName()
+		<< ", it caused " << damage << " hit points of damage!" RESET << std::endl;
 		target.takeDamage(damage);
-		std::cout << _name << " loses 1 energy point" << std::endl;
+		std::cout << RED << _name << " loses 1 energy point" RESET << std::endl;
 		_energyPoints--;
 	}
 	else
@@ -99,6 +99,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		unsigned int damage = life - amount;
 		this->setHitPoint(damage);
 	}
+	this->verbose();
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -133,15 +134,16 @@ void ClapTrap::beRepaired(ClapTrap& buddy, unsigned int amount)
 		if (newHitPoints > VALMAX)
 		{
 			buddy.setHitPoint(VALMAX);
-			std::cout << _name << " repaired " << buddy.getName() << ": its hit points are full!" << std::endl;
+			std::cout << GREEN << _name << " repaired " << buddy.getName() << ": its hit points are full!" RESET << std::endl;
 		}
 		else
 		{
-			std::cout << _name << " repaired " << buddy.getName() << " it gained " << amount << " hit points!"
+			std::cout << GREEN << _name << " repaired " << buddy.getName() << " it gained " << amount << " hit points!" RESET
 			<< std::endl;
 			buddy.setHitPoint(buddy.getHitPoint() + amount);
 		}
-		std::cout << "it cost " << _name << " 1 energy point" << std::endl;
+		buddy.verbose();
+		std::cout << RED "it cost " << _name << " 1 energy point" RESET << std::endl;
 		_energyPoints--;
 	}
 	else
@@ -163,7 +165,10 @@ void	ClapTrap::setEnergyPoint(unsigned int nb)
 {
 	_energyPoints = nb;
 }
-
+void	ClapTrap::setAttackDamage(unsigned int nb)
+{
+	_attackDamage = nb;
+}
 unsigned int	ClapTrap::getHitPoint() const
 {
 	return (_hitPoints);
@@ -182,4 +187,18 @@ unsigned int ClapTrap::getAttackDamage() const
 std::string	ClapTrap::getName() const
 {
 	return (_name);
+}
+
+void	ClapTrap::verbose() const
+{
+	if (SPEAKER)
+	{
+		std::cout << std::endl;
+		std::cout << CYAN "________________________________" << std::endl << std::endl;
+		std::cout << _name << " hit points:    " << this->getHitPoint() << std::endl;
+		std::cout << _name << " energy points: " << this->getEnergyPoint() << std::endl;
+		std::cout << _name << " attack damage: " << this->getAttackDamage() << std::endl;
+		std::cout << "________________________________" RESET << std::endl << std::endl;
+	}
+
 }
