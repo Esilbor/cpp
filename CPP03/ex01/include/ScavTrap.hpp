@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/25 17:04:58 by esilbor          ###   ########.fr       */
+/*   Created: 2024/02/25 13:38:51 by esilbor           #+#    #+#             */
+/*   Updated: 2024/02/25 17:00:55 by esilbor          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScavTrap.hpp"
+#ifndef _SCAVTRAP_HPP
+#define _SCAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap Kanye("Kanye");
-	ScavTrap West("West");
-	ScavTrap Taylor("Taylor");
-	ScavTrap Swift("Swift");
+public:
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &other);
+	~ScavTrap(void);
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
+	ScavTrap &operator=(const ScavTrap &other);
 
-	Taylor.verbose();
+	void attack(std::string const & target);
+	void attack(ClapTrap& target);
+	void guardGate(void);
+};
 
-	West.beRepaired(Kanye, 25);
 
-	Swift.guardGate();
-
-	return (0);
-}
+#endif

@@ -92,12 +92,12 @@ void ClapTrap::attack(ClapTrap& target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (amount >= this->getHitPoint())
-		this->setHitPoint(0);
+		this->setHitPoints(0);
 	else
 	{
 		unsigned int life = this->getHitPoint();
 		unsigned int damage = life - amount;
-		this->setHitPoint(damage);
+		this->setHitPoints(damage);
 	}
 	this->verbose();
 }
@@ -109,14 +109,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 		unsigned int	newHitPoints = this->getHitPoint() + amount;
 		if (newHitPoints > VALMAX)
 		{
-			this->setHitPoint(VALMAX);
+			this->setHitPoints(VALMAX);
 			std::cout << _name << " repaired itself: " << "its hit points are full!" << std::endl;
 		}
 		else
 		{
 			std::cout << _name << " repaired itself: " << "it gained " << amount << " hit points!"
 			<< std::endl;
-			this->setHitPoint(this->getHitPoint() + amount);
+			this->setHitPoints(this->getHitPoint() + amount);
 		}
 		std::cout << "it cost " << _name << " 1 energy point" << std::endl;
 		_energyPoints--;
@@ -133,14 +133,14 @@ void ClapTrap::beRepaired(ClapTrap& buddy, unsigned int amount)
 		unsigned int	newHitPoints = buddy.getHitPoint() + amount;
 		if (newHitPoints > VALMAX)
 		{
-			buddy.setHitPoint(VALMAX);
+			buddy.setHitPoints(VALMAX);
 			std::cout << GREEN << _name << " repaired " << buddy.getName() << ": its hit points are full!" RESET << std::endl;
 		}
 		else
 		{
 			std::cout << GREEN << _name << " repaired " << buddy.getName() << " it gained " << amount << " hit points!" RESET
 			<< std::endl;
-			buddy.setHitPoint(buddy.getHitPoint() + amount);
+			buddy.setHitPoints(buddy.getHitPoint() + amount);
 		}
 		buddy.verbose();
 		std::cout << RED "it cost " << _name << " 1 energy point" RESET << std::endl;
@@ -156,12 +156,17 @@ void ClapTrap::beRepaired(ClapTrap& buddy, unsigned int amount)
 /**********************************************/
 /**********************************************/
 
-void	ClapTrap::setHitPoint(unsigned int nb)
+void	ClapTrap::setName(std::string name)
+{
+	_name = name;
+}
+
+void	ClapTrap::setHitPoints(unsigned int nb)
 {
 	_hitPoints = nb;
 }
 
-void	ClapTrap::setEnergyPoint(unsigned int nb)
+void	ClapTrap::setEnergyPoints(unsigned int nb)
 {
 	_energyPoints = nb;
 }
