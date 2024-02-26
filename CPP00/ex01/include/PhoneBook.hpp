@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:02:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/12 17:25:11 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/26 10:38:17 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ class PhoneBook
 		int	i;
 		void readInput(const std::string& prompt, e_token token);
 		bool indexIsValid(int& i);
+		bool containsWhitespace(const std::string& str);
 
 	public:
 		PhoneBook();
 		~PhoneBook();
 		void addContact(void);
 		void searchContact(void);
-		bool containsWhitespace(const std::string& str);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/15 09:51:15 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/26 10:13:52 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	user_entry(std::string& user_input, PhoneBook& repertoire)
 
 int	main(int argc, char **argv)
 {
-	if (argc < 1)
+	(void)argv;
+	if (argc > 1)
 	{
 		std::cout << "Program does not take any argument" << std::endl;
 		return (1);

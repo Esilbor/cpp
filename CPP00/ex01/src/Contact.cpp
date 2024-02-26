@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:56:22 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/12 16:15:11 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/26 10:34:01 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void Contact::getContactInfo()
 	std::string trunc_last_name = last_name.substr(0, 10);
 	std::string trunc_nick_name = nick_name.substr(0, 10);
 
-	if (first_name.length() >= 10)
+	if (first_name.length() > 10)
 		trunc_first_name[9] = '.';
-	if (last_name.length() >= 10)
+	if (last_name.length() > 10)
 		trunc_last_name[9] = '.';
-	if (nick_name.length() >= 10)
+	if (nick_name.length() > 10)
 		trunc_nick_name[9] = '.';
 
 	std::cout << "|" << std::setw(10) << trunc_first_name
