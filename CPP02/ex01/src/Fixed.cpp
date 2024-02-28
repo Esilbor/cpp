@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/23 12:21:40 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/28 11:50:13 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ Fixed::Fixed(const int nb) : _value(nb << _bits)
 
 }
 // convert a float into a fixed-point number
-Fixed::Fixed(const float nb) : _value( static_cast<int>(nb * (1 << _bits)))
+// multiply float nb by 2^_bits (2^8 = 256)
+// round the result and cast to an int
+Fixed::Fixed(const float nb) : _value( static_cast<int>((nb * (1 << _bits))+ (nb >= 0 ? 0.5 : -0.5)))
 {
 	std::cout << "Float constructor called" << std::endl;
-	
+
 }
-	
+
 // operateur d'affectation
 Fixed& Fixed::operator=(const Fixed& other)
 {
@@ -68,8 +70,9 @@ void Fixed::setRawBits(int const raw)
 // return a float from a fixed-point value
 float Fixed::toFloat (void) const
 {
-	return (static_cast<float>(_value) / static_cast<float>(1 << _bits));
+	return ((float)(_value) / (float)(1 << _bits));
 }
+
 
 // convert fixed_point nb to an int
 int Fixed::toInt (void) const

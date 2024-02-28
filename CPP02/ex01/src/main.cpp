@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:46:34 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/23 11:48:01 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/27 14:26:57 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int main( void )
 {
-Fixed
-a;
+Fixed a;
 Fixed const b( 10 );
 Fixed const c( 42.42f );
 Fixed const d( b );

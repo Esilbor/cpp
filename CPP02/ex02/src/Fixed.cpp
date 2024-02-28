@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/23 16:40:05 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/28 12:02:11 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 
-// constructeur de reopie
+// constructeur de recopie
 Fixed::Fixed(const Fixed& fixed) /* : _value(fixed._value) */
 {
 	// std::cout << "Copy constructor called" << std::endl;
@@ -25,13 +25,15 @@ Fixed::Fixed(const int nb) : _value(nb << _bits)
 	// std::cout << "Int constructor called" << std::endl;
 
 }
-// convert a float into a fixed-point number
-Fixed::Fixed(const float nb) : _value( static_cast<int>(nb * (1 << _bits)))
+
+// convert a float into a fixed-point number:
+// multiply float nb by 2^_bits (2^8 = 256)
+// round the result and cast to an int
+Fixed::Fixed(const float nb) : _value( static_cast<int>((nb * (1 << _bits)) + (nb >= 0 ? 0.5 : -0.5)))
 {
-	// std::cout << "Float constructor called" << std::endl;
-	
+	std::cout << "Float constructor called" << std::endl;
 }
-	
+
 // operateur d'affectation
 Fixed& Fixed::operator=(const Fixed& other)
 {
@@ -122,7 +124,7 @@ bool Fixed::operator!=(const Fixed& nb) const
 /**********************************************************/
 
 // the constructor Fixed(const float nb) is called upon return
-	
+
 Fixed Fixed::operator+(const Fixed& nb) const
 {
 	return (Fixed(this->toFloat() + nb.toFloat()));
@@ -140,7 +142,7 @@ Fixed Fixed::operator*(const Fixed& nb) const
 
 Fixed Fixed::operator/(const Fixed& nb) const
 {
-	return (Fixed(this->toFloat() / nb.toFloat()));	
+	return (Fixed(this->toFloat() / nb.toFloat()));
 }
 
 /**********************************************************/
@@ -192,7 +194,7 @@ Fixed Fixed::operator++(int)
 {
 	Fixed tmp = *this;
 	_value++;
-	return (tmp);	
+	return (tmp);
 }
 
 // post-decrementation the value is first returned then decremented

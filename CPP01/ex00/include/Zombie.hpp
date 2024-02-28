@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 10:54:28 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/15 11:40:41 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/26 12:13:20 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ public:
 	void announce(void);
 	void setZombieName(std::string name);
 };
-
 
 void randomChump( std::string name );
 Zombie* newZombie( std::string name );

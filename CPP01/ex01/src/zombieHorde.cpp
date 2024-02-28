@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:04:13 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/15 14:55:09 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/02/28 12:48:03 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ Zombie* zombieHorde( int N, std::string name )
 
 	for (int i = 0; i < N; i++)
 	{
-		std::stringstream namestream;
-		namestream << name << "_" << i;
-		
+		std::stringstream namestream; // stringstream is usefull to operate concatenation in the string with other types
+		namestream << name << '_' << i; // such as here where name is concatenated with the char _ and the int i
+
 		horde[i].setZombieName(namestream.str());
 	}
 	return (horde);
