@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:54:52 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/28 14:26:02 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/28 18:31:22 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 Animal::Animal() : type("Prototype")
 {
-	std::cout << "Generic creation of a beast" << std::endl;
+	std::cout << "Default animal constructor has been called" << std::endl;
 }
 
 Animal::Animal(const Animal& otherAnimal)
 {
 	*this = otherAnimal;
-	std::cout << "Beast has been referenced from" << otherAnimal.getType()
+	std::cout << "Animal copy constructor has been performed from " << otherAnimal.getType()
 	<< std::endl;
 
 }
@@ -34,6 +34,7 @@ Animal& Animal::operator =(const Animal& animalB)
 
 Animal::~Animal()
 {
+	std::cout << "Animal " << this->getType() << " destructor has been called" << std::endl;
 }
 
 std::string Animal::getType() const

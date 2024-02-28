@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 13:56:14 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/28 14:14:32 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/28 18:42:14 by bbresil           #+#    #+#             */
+/*   Updated: 2024/02/28 18:47:04 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+#define CAT_HPP
 #include "Animal.hpp"
 
-class Dog : public Animal
+class Cat : public Animal
 {
 private:
 	/* data */
 public:
 
-	Dog(/* args */);
-	~Dog();
+	Cat();
+	Cat(const Cat& otherCat);
+	Cat& operator=(const Cat& CatB);
+	~Cat();
+	void makeSound();
 };
 
-
-
-
-
-Dog::Dog(/* args */)
-{
-}
-
-Dog::~Dog()
-{
-}
+#endif
