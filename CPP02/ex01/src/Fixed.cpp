@@ -6,13 +6,19 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/28 11:50:13 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/29 08:28:05 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 
-// constructeur de reopie
+//constructeur par defaut
+Fixed::Fixed(/* args */) : _value(0)
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+
+//constructeur de recopie
 Fixed::Fixed(const Fixed& fixed) /* : _value(fixed._value) */
 {
 	std::cout << "Copy constructor called" << std::endl;
@@ -43,11 +49,6 @@ Fixed& Fixed::operator=(const Fixed& other)
 		this->_value = other.getRawBits();
 	}
 	return (*this);
-}
-//constructeur par defaut
-Fixed::Fixed(/* args */) : _value(0)
-{
-	std::cout << "Default constructor called" << std::endl;
 }
 
 //destructeur

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:00:05 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/26 10:13:52 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/29 10:47:05 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	user_entry(std::string& user_input, PhoneBook& repertoire)
 		std::cout << "Please use ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "> ";
 		getline(std::cin, user_input);
-		if (std::cin.eof())
+		if (std::cin.eof()) // ctl+D
 			return ;
 	}
 	if (user_input == "ADD" && !std::cin.eof())

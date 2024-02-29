@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 09:26:47 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/26 10:04:43 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/29 10:30:15 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	megaphone(std::string str)
 	{
 		std::cout << (char)std::toupper(str[i]);
 	}
-	std::cout << " ";
 	return ;
 }
 
@@ -33,6 +32,8 @@ int	main(int argc, char **argv)
 		for (int i = 1; i < argc; ++i)
 		{
 			megaphone(argv[i]);
+			if (i < argc - 1 )
+				std::cout << " ";
 		}
 		std::cout << std::endl;
 

@@ -6,14 +6,14 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/28 12:02:11 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/29 10:11:53 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Fixed.hpp"
 
 // constructeur de recopie
-Fixed::Fixed(const Fixed& fixed) /* : _value(fixed._value) */
+Fixed::Fixed(const Fixed& fixed)
 {
 	// std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;

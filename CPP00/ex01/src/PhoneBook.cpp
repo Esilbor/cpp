@@ -51,7 +51,7 @@ void	PhoneBook::addContact()
 		readInput("Enter contact's darkest secret: ", DARK);
 	if (!std::cin.eof())
 		std::cout << std::endl << "Contact Registered... " << std::endl << std::endl;
-	i = (i + 1) % 8;
+	this->i = (i + 1) % 8;
 }
 
 bool	PhoneBook::indexIsValid(int& i)

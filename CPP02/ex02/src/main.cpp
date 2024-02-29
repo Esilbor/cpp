@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:46:34 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/28 12:26:42 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/02/29 10:13:07 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main( void )
 {
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	
+
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
@@ -37,11 +37,23 @@ int main( void )
 
 // int	main()
 // {
-// 	Fixed a((float) 10.256987855);
-// 	Fixed b((float) 22.256987855);
+// 	float c = 10.856265f;
+// 	float d = 22.256265f;
+// 	std::cout << "float c = " << c << std::endl;
+// 	std::cout << "float d = " << d << std::endl;
+// 	Fixed a(c);
+// 	Fixed b(22.256f);
 
 // 	std::cout << "A = " << a << std::endl;
 // 	std::cout << "B = " << b << std::endl;
+// 	Fixed e(a + b);
+// 	std::cout << "E = " << e << std::endl;
+// 	e = a - b;
+// 	std::cout << "E = " << e << std::endl;
+// 	e = a * b;
+// 	std::cout << "E = " << e << std::endl;
+// 	e = a / b;
+// 	std::cout << "E = " << e << std::endl;
 // 	std::cout << "A > B = " << printBOOL(a > b) << std::endl;
 // 	std::cout << "A < B = " << printBOOL(a < b) << std::endl;
 // 	std::cout << "A >= B = " << printBOOL(a >= b) << std::endl;
@@ -72,3 +84,4 @@ int main( void )
 // 	std::cout << "(int to fixed point) Fixed e=" << e << std::endl;
 // 	return (0);
 // }
+

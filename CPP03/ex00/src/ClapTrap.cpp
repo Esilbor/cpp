@@ -13,7 +13,7 @@
 #include "../include/ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-: _name("Bob"), _hitPoints(10), _energyPoints(10), _attackDamage (0)
+: _name("Bot"), _hitPoints(10), _energyPoints(10), _attackDamage (0)
 {
 	std::cout << CYAN "Default ClapTrap Bob has been created" RESET << std::endl;
 }
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& clapCopy)
 {
-	*this = clapCopy; 
+	*this = clapCopy;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& clapB)
