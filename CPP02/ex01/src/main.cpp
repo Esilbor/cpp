@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:46:34 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/27 14:26:57 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/04 17:10:43 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,26 @@ std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 return 0;
 }
+
+// int	main(void)
+// {
+// 	const float flo = 154.658f;
+// 	Fixed a;
+// 	Fixed const b (17);
+// 	Fixed const c (10.0f / 3.0f);
+// 	Fixed const d (flo);
+// 	Fixed const e (0.0f / 0.0f); // NaN
+// 	a.setRawBits(1054);
+// 	std::cout << "a is " << a << std::endl;
+// 	std::cout << "a to float is " << a << std::endl; // both values are similar since << calls toFloat()
+// 	std::cout << "a to float 2 is " << a.toFloat() << std::endl;
+// 	std::cout << "a to int is " << a.toInt() << std::endl;
+// 	std::cout << "rawBits of a is " << a.getRawBits() << std::endl;
+// 	std::cout << "b is " << b << std::endl;
+// 	std::cout << "c is " << c << std::endl;
+// 	std::cout << "d is " << d << std::endl;
+// 	std::cout << "e is " << e << std::endl;
+// 	return (0);
+// }
+
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:09:42 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/23 11:51:56 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/03/04 16:44:58 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
+#include <climits>
+#include <cmath>
 
 class Fixed
 {
@@ -28,7 +31,7 @@ public:
 	Fixed(const Fixed& fixed); // constructeur de recopie
 	Fixed& operator=(const Fixed& other); // operateur d'affectation
 	~Fixed(); // destructeur
-	
+
 	int getRawBits (void) const;
 	void setRawBits(int const raw);
 	float toFloat (void) const;
