@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:46:34 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/04 17:10:43 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/05 15:15:15 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,27 @@ return 0;
 // 	std::cout << "e is " << e << std::endl;
 // 	return (0);
 // }
+
+
+// int main() {
+// 	// Creating a NaN float value
+// 	float nanValue = 0.0f / 0.0f;
+// 	Fixed nanFixed(nanValue);
+
+// 	std::cout << "-------------------------------" << std::endl;
+
+// 	// Creating a positive infinity float value
+// 	float posInfValue = std::numeric_limits<float>::infinity();
+// 	Fixed posInfFixed(posInfValue);
+
+// 	std::cout << "-------------------------------" << std::endl;
+
+// 	// Creating a negative infinity float value
+// 	float negInfValue = -std::numeric_limits<float>::infinity();
+// 	Fixed negInfFixed(negInfValue);
+
+// 	return 0;
+// }
+
 
 

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:46:34 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/29 10:13:07 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/05 15:23:22 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,16 @@ int main( void )
 // 	return (0);
 // }
 
+// int	main(void)
+// {
+// 	float a = 2.4f;
+// 	Fixed b = Fixed(a);
+// 	std::cout << "Raw bits value of b = " << b.getRawBits() << std::endl;
+// 	std::cout << "fixeb value of b from float = " << b << std::endl;
+// 	std::cout << "b into an int = " << b.toInt() << std::endl;
+// 	return (0);
+// }
+
+// float 2.4 is converted into a Fixed
+// roundf(2.4 * 256) = 614 (raw value)
+// Fixed Point value = 614 / 256 = 2.3984

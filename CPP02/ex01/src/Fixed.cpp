@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:01:57 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/04 16:43:50 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/05 15:10:06 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,31 +31,33 @@ Fixed::Fixed(const int nb) : _value(nb << _bits)
 	std::cout << "Int constructor called" << std::endl;
 
 }
+
+//check for NaN +inf and -inf as in IEEE754 norm
 // convert a float into a fixed-point number
 // multiply float nb by 2^_bits (2^8 = 256)
 // round the result and cast to an int
 Fixed::Fixed(const float nb)
 {
+	unsigned int bin;
+	memcpy(&bin, &nb, sizeof(nb));
 	std::cout << "Float constructor called" << std::endl;
 	if (nb != nb)
 	{
 		std::cout << "NaN detected" << std::endl;
 		_value = 0;
 	}
-	else if (nb > std::numeric_limits<float>::max())
+	else if (bin == POSINF)
 	{
 		std::cout << "+inf detected" << std::endl;
 		_value = INT_MAX; // Handle positive infinity
 	}
-	else if (nb < -std::numeric_limits<float>::max())
+	else if (bin == NEGINF)
 	{
 		std::cout << "-inf detected" << std::endl;
 		_value = INT_MIN; // Handle negative infinity
 	}
 	else
-	{
-		_value = static_cast<int>(roundf(nb * (1 << _bits))/*  + (nb >= 0 ? 0.5 : -0.5) */);
-	}
+		_value = static_cast<int>(roundf(nb * (1 << _bits)));
 }
 
 // operateur d'affectation

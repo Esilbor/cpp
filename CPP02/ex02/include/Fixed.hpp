@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:09:42 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/27 14:55:03 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/05 14:59:48 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
+#include <climits>
+#include <cstring>
+#include <cmath>
+
+#define POSINF 0x7f800000
+#define NEGINF 0xff800000
 
 class Fixed
 {
