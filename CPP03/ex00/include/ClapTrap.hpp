@@ -35,9 +35,9 @@ private:
 	unsigned int _attackDamage;
 public:
 	ClapTrap();
+	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap& clapCopy);
 	ClapTrap& operator=(const ClapTrap& clapB);
-	ClapTrap(std::string name);
 	~ClapTrap();
 
 	void	setHitPoint(unsigned int nb);
@@ -48,7 +48,7 @@ public:
 	unsigned int getEnergyPoint() const;
 	unsigned int getAttackDamage() const;
 	std::string	getName() const;
-	
+
 	void attack(const std::string& target);
 	void attack(ClapTrap& target);
 	void takeDamage(unsigned int amount);

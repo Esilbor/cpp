@@ -52,9 +52,11 @@ void ClapTrap::attack(const std::string& target)
 	if (_hitPoints && _energyPoints)
 	{
 		unsigned int damage = this->getAttackDamage();
+		ClapTrap Target(target);
 		std::cout << MAGENTA "ClapTrap " << _name << " fakes an attack on " << target
-		<< ", it would have caused " << damage << " points of damage!" RESET << std::endl;
+		<< ", it caused " << damage << " points of damage!" RESET << std::endl;
 		std::cout << RED << _name << " loses 1 energy point" RESET << std::endl;
+		Target.takeDamage(damage);
 		_energyPoints--;
 	}
 	else
@@ -99,6 +101,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 		unsigned int damage = life - amount;
 		this->setHitPoint(damage);
 	}
+	std::cout << YELLOW << "ClapTrap " << this->getName() << " lost " << amount << " hit points!" << RESET << std::endl;
 	this->verbose();
 }
 
