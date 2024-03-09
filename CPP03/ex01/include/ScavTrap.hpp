@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 13:38:51 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/25 17:00:55 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/03/09 11:42:41 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &other);
-	~ScavTrap(void);
-
 	ScavTrap &operator=(const ScavTrap &other);
+	~ScavTrap(void);
 
 	void attack(std::string const & target);
 	void attack(ClapTrap& target);

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:42:14 by bbresil           #+#    #+#             */
-/*   Updated: 2024/02/28 18:47:04 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/08 17:36:09 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Cat(const Cat& otherCat);
 	Cat& operator=(const Cat& CatB);
 	~Cat();
-	void makeSound();
+	void makeSound() const;
 };
 
 #endif

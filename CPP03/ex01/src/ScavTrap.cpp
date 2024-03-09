@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:06:17 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/25 17:16:11 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/03/09 11:42:50 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,48 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 
 void ScavTrap::attack(std::string const & target)
 {
-
-	std::cout << MAGENTA "ScavTrap " << this->getName()
-	<< " prepares an attack on " << target << RESET << std::endl;
-	ClapTrap::attack(target);
+	if (getHitPoint() && getEnergyPoint())
+	{
+		std::cout << MAGENTA "ScavTrap " << this->getName()
+		<< " prepares an attack on " << target << ", it would have caused " << getAttackDamage()
+		<< " points of damage!" RESET << std::endl;
+		setEnergyPoints(getEnergyPoint() - 1);
+		std::cout << RED << getName() << " loses 1 energy point" RESET
+		<< std::endl;
+	}
+	else
+	{
+		std::cout << MAGENTA << "ScavTrap " << getName() << "cannot attack: " << std::endl;
+		if (getHitPoint() == 0)
+			std::cout << "it has no hit points" RESET << std::endl;
+		else
+			std::cout << "it has no energy points" RESET << std::endl;
+	}
 }
 void ScavTrap::guardGate(void)
 {
-	std::cout << GREEN "ScavTrap " << this->getName() 
+	std::cout << GREEN "ScavTrap " << this->getName()
 	<< " is now in Gate keeper mode" RESET << std::endl;
 }
 
 void ScavTrap::attack(ClapTrap& target)
 {
-	std::cout << YELLOW "ScavTrap " << this->getName() << " decided to attack "
-	<< target.getName() << RESET << std::endl;
-	ClapTrap::attack(target);
+	if (getHitPoint() && getEnergyPoint())
+	{
+		unsigned int damage = this->getAttackDamage();
+		std::cout << YELLOW "ScavTrap " << getName() << " attacks " << target.getName()
+		<< ", it caused " << damage << " hit points of damage!" RESET << std::endl;
+		target.takeDamage(damage);
+		std::cout << RED << getName() << " loses 1 energy point" RESET << std::endl;
+		setEnergyPoints(getEnergyPoint() - 1);
+	}
+	else
+	{
+		std::cout << "ScavTrap " << getName() << "cannot attack: " << std::endl;
+		if (getHitPoint() == 0)
+			std::cout << "it has no hit points";
+		else if (getEnergyPoint() == 0)
+			std::cout << "it has no energy points";
+		std::cout << std::endl;
+	}
 }

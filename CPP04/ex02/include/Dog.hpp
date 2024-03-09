@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/07 17:16:24 by bbresil          ###   ########.fr       */
+/*   Created: 2024/02/28 13:56:14 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/09 17:57:38 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-int main()
+class Dog : public Animal
 {
-	ClapTrap Kanye("Kanye");
-	ClapTrap West("West");
-	ClapTrap Taylor("Taylor");
-	ClapTrap Swift("Swift");
+private:
+	Brain* _brain;
+public:
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
-	Taylor.beRepaired(12);
+	Dog();
+	Dog(const Dog& otherDog);
+	Dog& operator=(const Dog& dogB);
+	~Dog();
+	void makeSound() const;
+	void setIdea(int index, std::string idea);
+	std::string getIdea(int index) const;
+};
 
-	Taylor.verbose();
-
-	West.beRepaired(Kanye, 25);
-
-	return (0);
-}
+#endif

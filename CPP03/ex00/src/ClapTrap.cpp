@@ -52,11 +52,9 @@ void ClapTrap::attack(const std::string& target)
 	if (_hitPoints && _energyPoints)
 	{
 		unsigned int damage = this->getAttackDamage();
-		ClapTrap Target(target);
 		std::cout << MAGENTA "ClapTrap " << _name << " fakes an attack on " << target
 		<< ", it caused " << damage << " points of damage!" RESET << std::endl;
 		std::cout << RED << _name << " loses 1 energy point" RESET << std::endl;
-		Target.takeDamage(damage);
 		_energyPoints--;
 	}
 	else
@@ -107,7 +105,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_energyPoints > 0)
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		unsigned int	newHitPoints = this->getHitPoint() + amount;
 		if (newHitPoints > VALMAX)
@@ -131,7 +129,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 void ClapTrap::beRepaired(ClapTrap& buddy, unsigned int amount)
 {
-	if (_energyPoints > 0)
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		unsigned int	newHitPoints = buddy.getHitPoint() + amount;
 		if (newHitPoints > VALMAX)

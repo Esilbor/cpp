@@ -23,14 +23,9 @@ public:
 	Animal(const Animal& otherAnimal);
 	Animal& operator=(const Animal& animalB);
 	virtual ~Animal();
-	// Declare base class destructor as `virtual` to ensure
-	// derived class destructors are called, enabling proper
-	// resource cleanup when objects are deleted via base class pointers.
-	// This avoids resource leaks and undefined behavior.
-
 	std::string getType() const;
 	void setType(std::string type);
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 protected:
 	std::string type;
 };

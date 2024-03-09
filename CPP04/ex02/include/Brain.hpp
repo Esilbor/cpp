@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/07 17:16:24 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/08 18:08:00 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/09 17:12:06 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ClapTrap.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+#include "Animal.hpp"
 
-int main()
+
+class Brain
 {
-	ClapTrap Kanye("Kanye");
-	ClapTrap West("West");
-	ClapTrap Taylor("Taylor");
-	ClapTrap Swift("Swift");
+private:
+	std::string _ideas[100];
+public:
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
-	Taylor.beRepaired(12);
+	Brain();
+	Brain(const Brain& otherBrain);
+	Brain& operator=(const Brain& BrainB);
+	~Brain();
+	void setIdea(int index, std::string idea);
+	std::string getIdea(int index) const;
 
-	Taylor.verbose();
 
-	West.beRepaired(Kanye, 25);
+};
 
-	return (0);
-}
+#endif

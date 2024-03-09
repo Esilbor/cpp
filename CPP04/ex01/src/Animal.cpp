@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:54:52 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/08 10:38:00 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/09 12:45:27 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Animal::Animal() : type("Prototype")
 	std::cout << "Default animal constructor has been called" << std::endl;
 }
 
-Animal::Animal(const Animal& otherAnimal)
+Animal::Animal(const Animal& otherAnimal) : type(otherAnimal.type)
 {
-	*this = otherAnimal;
+	// *this = otherAnimal;
 	std::cout << "Animal copy constructor has been performed from " << otherAnimal.getType()
 	<< std::endl;
 

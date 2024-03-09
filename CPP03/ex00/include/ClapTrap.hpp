@@ -43,7 +43,6 @@ public:
 	void	setHitPoint(unsigned int nb);
 	void	setEnergyPoint(unsigned int nb);
 	void	setAttackDamage(unsigned int nb);
-	ClapTrap& getClapTrap(std::string& name);
 	unsigned int	getHitPoint() const;
 	unsigned int getEnergyPoint() const;
 	unsigned int getAttackDamage() const;
