@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilbor <esilbor@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:06:17 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/25 20:00:48 by esilbor          ###   ########.fr       */
+/*   Updated: 2024/03/10 09:26:34 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << YELLOW << this->getName() << " ✨ 👍 ✨ sent you a high five request! ✨ 👍 ✨" RESET << std::endl;
-	// std::cout << YELLOW << this->getName() << " sent you a positive high five request!" RESET << std::endl;
 }

@@ -28,28 +28,29 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string _name;
 	unsigned int _hitPoints;
 	unsigned int _energyPoints;
 	unsigned int _attackDamage;
+
+	void	setName(std::string name);
+	void	setHitPoints(unsigned int nb);
+	void	setEnergyPoints(unsigned int nb);
+	void	setAttackDamage(unsigned int nb);
+
 public:
 	ClapTrap();
 	ClapTrap(const ClapTrap& clapCopy);
 	ClapTrap& operator=(const ClapTrap& clapB);
 	ClapTrap(std::string name);
 	~ClapTrap();
+	std::string		getName() const;
 
-	void	setName(std::string name);
-	void	setHitPoints(unsigned int nb);
-	void	setEnergyPoints(unsigned int nb);
-	void	setAttackDamage(unsigned int nb);
-	ClapTrap& getClapTrap(std::string& name);
 	unsigned int	getHitPoint() const;
-	unsigned int getEnergyPoint() const;
-	unsigned int getAttackDamage() const;
-	std::string	getName() const;
-	
+	unsigned int	getEnergyPoint() const;
+	unsigned int	getAttackDamage() const;
+
 	void attack(const std::string& target);
 	void attack(ClapTrap& target);
 	void takeDamage(unsigned int amount);

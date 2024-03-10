@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/10 09:27:55 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/10 13:31:07 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/10 14:04:58 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScavTrap.hpp"
+#ifndef ICE_HPP
+#define ICE_HPP
+#include "AMateria.hpp"
+#include <string>
+#include <iostream>
 
-int main()
+class Ice : public AMateria
 {
-	ScavTrap Kanye("Kanye");
-	ScavTrap West("West");
-	ScavTrap Taylor("Taylor");
-	ScavTrap Swift("Swift");
+private:
+	/*args*/
+public:
+	Ice();
+	~Ice();
+	Ice(const Ice& otherIce);
+	Ice& operator=(const Ice& iceB);
+	Ice& clone();
+};
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
 
-	Taylor.verbose();
 
-	West.beRepaired(Kanye, 25);
-	West.beRepaired(35);
-
-	Swift.guardGate();
-
-	return (0);
-}
+#endif

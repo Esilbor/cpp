@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/10 09:27:55 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/10 13:48:24 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/10 14:18:11 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScavTrap.hpp"
 
-int main()
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
+#include "AMateria.hpp"
+#include <string>
+#include <iostream>
+
+class ICharacter
 {
-	ScavTrap Kanye("Kanye");
-	ScavTrap West("West");
-	ScavTrap Taylor("Taylor");
-	ScavTrap Swift("Swift");
+public:
+	virtual ~ICharacter() {}
+	virtual std::string const & getName() const = 0;
+	virtual void equip(AMateria* m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter& target) = 0;
+};
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
-
-	Taylor.verbose();
-
-	West.beRepaired(Kanye, 25);
-	West.beRepaired(35);
-
-	Swift.guardGate();
-
-	return (0);
-}
+#endif

@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/10 09:27:55 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/10 13:32:23 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/10 13:32:59 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScavTrap.hpp"
+#include "Ice.hpp"
 
-int main()
+Ice::Ice(/* args */)
 {
-	ScavTrap Kanye("Kanye");
-	ScavTrap West("West");
-	ScavTrap Taylor("Taylor");
-	ScavTrap Swift("Swift");
+}
 
-	Taylor.verbose();
-	Taylor.attack("Katy");
-	Taylor.attack(Kanye);
-
-	Taylor.verbose();
-
-	West.beRepaired(Kanye, 25);
-	West.beRepaired(35);
-
-	Swift.guardGate();
-
-	return (0);
+Ice::~Ice()
+{
 }

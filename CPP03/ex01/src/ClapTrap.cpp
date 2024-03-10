@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& clapCopy)
 {
-	*this = clapCopy; 
+	*this = clapCopy;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& clapB)
@@ -104,7 +104,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (_energyPoints > 0)
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		unsigned int	newHitPoints = this->getHitPoint() + amount;
 		if (newHitPoints > VALMAX)
@@ -128,7 +128,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 void ClapTrap::beRepaired(ClapTrap& buddy, unsigned int amount)
 {
-	if (_energyPoints > 0)
+	if (_energyPoints > 0 && _hitPoints > 0)
 	{
 		unsigned int	newHitPoints = buddy.getHitPoint() + amount;
 		if (newHitPoints > VALMAX)
