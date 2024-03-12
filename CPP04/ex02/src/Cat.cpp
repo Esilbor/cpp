@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:44:55 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 17:16:53 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 19:42:21 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat()
 	this->setType("Cat");
 	std::cout << "Cat with a brain constructor has been called" << std::endl;
 }
-Cat::Cat(const Cat& otherCat) : Animal(otherCat), _brain(new Brain(*otherCat._brain))
+Cat::Cat(const Cat& otherCat) : AAnimal(otherCat), _brain(new Brain(*otherCat._brain))
 {
 	// *this = otherCat;
 	std::cout << this->getType() << " called Cat with a brain copy constructor from "
@@ -29,7 +29,7 @@ Cat& Cat::operator=(const Cat& catB)
 {
 	if (this != &catB)
 	{
-		Animal::operator=(catB);
+		AAnimal::operator=(catB);
 		delete _brain;
 		_brain = new Brain(*catB._brain);
 	}

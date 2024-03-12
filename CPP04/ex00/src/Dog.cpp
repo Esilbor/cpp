@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:48:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/08 17:43:17 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 13:23:19 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Dog& Dog::operator=(const Dog& dogB)
 
 Dog::~Dog()
 {
-	std::cout << "Dog " << this->getType() << " destructor has been called" << std::endl;
+	std::cout << "Dog destructor has been called" << std::endl;
 
 }
 

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:44:55 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 17:16:53 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:46:00 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Cat::Cat()
 }
 Cat::Cat(const Cat& otherCat) : Animal(otherCat), _brain(new Brain(*otherCat._brain))
 {
-	// *this = otherCat;
 	std::cout << this->getType() << " called Cat with a brain copy constructor from "
 	<< otherCat.getType() << std::endl;
 }

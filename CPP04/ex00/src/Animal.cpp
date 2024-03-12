@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:54:52 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/08 10:38:00 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 14:06:56 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Animal& Animal::operator =(const Animal& animalB)
 
 Animal::~Animal()
 {
-	std::cout << "Animal " << this->getType() << " destructor has been called" << std::endl;
+	std::cout << "Animal destructor has been called" << std::endl;
 }
 
 std::string Animal::getType() const

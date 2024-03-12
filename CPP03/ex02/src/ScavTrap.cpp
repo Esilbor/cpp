@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:06:17 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/09 11:45:40 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:19:28 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "ScavTrap: default constructor called" << std::endl;
-	this->setName("Tom");
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->_name = "Tom";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << GREEN "ScavTrap: " << name << " constructor called" RESET << std::endl;
-	this->setName(name);
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->_name = name;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 	std::cout << "ScavTrap: Copy constructor called" << std::endl;
 }
 
-ScavTrap::~ScavTrap(void) // no need to call ~ClapTrap()
+ScavTrap::~ScavTrap(void)
 {
 	std::cout << MAGENTA "ScavTrap: " << this->getName()
 	<< " Destructor called" RESET << std::endl;
@@ -55,7 +55,7 @@ void ScavTrap::attack(std::string const & target)
 		std::cout << MAGENTA "ScavTrap " << this->getName()
 		<< " prepares an attack on " << target << ", it would have caused " << getAttackDamage()
 		<< " points of damage!" RESET << std::endl;
-		setEnergyPoints(getEnergyPoint() - 1);
+		_energyPoints--;
 		std::cout << RED << getName() << " loses 1 energy point" RESET
 		<< std::endl;
 	}
@@ -83,7 +83,7 @@ void ScavTrap::attack(ClapTrap& target)
 		<< ", it caused " << damage << " hit points of damage!" RESET << std::endl;
 		target.takeDamage(damage);
 		std::cout << RED << getName() << " loses 1 energy point" RESET << std::endl;
-		setEnergyPoints(getEnergyPoint() - 1);
+		_energyPoints--;
 	}
 	else
 	{

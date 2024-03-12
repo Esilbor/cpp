@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 18:46:54 by esilbor           #+#    #+#             */
-/*   Updated: 2024/02/29 12:38:08 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 16:04:11 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,14 @@ int main()
 
 	return (0);
 }
+
+// int	main()
+// {
+// 	FragTrap A("Bobo");
+// 	FragTrap B(A);
+// 	FragTrap C = A;
+// 	A.verbose();
+// 	B.verbose();
+// 	C.verbose();
+// 	return 0;
+// }

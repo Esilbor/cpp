@@ -6,16 +6,16 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:42:14 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 17:12:33 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 19:33:33 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 #define CAT_HPP
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 private:
 	Brain* _brain;

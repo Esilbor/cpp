@@ -40,9 +40,9 @@ public:
 	ClapTrap& operator=(const ClapTrap& clapB);
 	~ClapTrap();
 
-	void	setHitPoint(unsigned int nb);
-	void	setEnergyPoint(unsigned int nb);
-	void	setAttackDamage(unsigned int nb);
+	// void	setHitPoint(unsigned int nb);
+	// void	setEnergyPoint(unsigned int nb);
+	// void	setAttackDamage(unsigned int nb);
 	unsigned int	getHitPoint() const;
 	unsigned int getEnergyPoint() const;
 	unsigned int getAttackDamage() const;

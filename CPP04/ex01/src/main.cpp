@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:16:27 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 19:19:11 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:56:56 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	main()
 	dogA->setIdea(0, "find a cat and chew it up");
 
 	std::cout << "catA idea[0] = " << catA->getIdea(0) << std::endl;
+	std::cout << "catA idea[10] = " << catA->getIdea(10) << std::endl;
 	std::cout << "catB idea[0] = " << catB->getIdea(0) << std::endl;
 
 	std::cout << "dogA idea[0] = " << dogA->getIdea(0) << std::endl;

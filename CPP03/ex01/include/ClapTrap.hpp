@@ -34,11 +34,6 @@ protected:
 	unsigned int _energyPoints;
 	unsigned int _attackDamage;
 
-	void			setHitPoints(unsigned int nb);
-	void			setEnergyPoints(unsigned int nb);
-	void			setAttackDamage(unsigned int nb);
-	void			setName(std::string name);
-
 public:
 	ClapTrap();
 	ClapTrap(const ClapTrap& clapCopy);

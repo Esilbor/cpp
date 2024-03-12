@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 13:56:14 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/11 19:33:47 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/11 09:22:09 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/11 09:34:33 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "AAnimal.hpp"
-#include "Brain.hpp"
 
-class Dog : public AAnimal
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include <string>
+#include <iostream>
+
+class Character : public ICharacter
 {
 private:
-	Brain* _brain;
+	std::string name;
+	AMateria* inventory[4];
 public:
-
-	Dog();
-	Dog(const Dog& otherDog);
-	Dog& operator=(const Dog& dogB);
-	~Dog();
-	void makeSound() const;
-	void setIdea(int index, std::string idea);
-	std::string getIdea(int index) const;
+	Character();
+	~Character();
+	Character& operator=()
+	std::string const & getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
 };
 
 #endif

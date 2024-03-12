@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:44:55 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/08 17:44:16 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/11 17:03:53 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ Cat& Cat::operator=(const Cat& CatB)
 	return (*this);
 }
 
-
 Cat::~Cat()
 {
-	std::cout << "Cat " << this->getType() << " destructor has been called" << std::endl;
+	std::cout << "Cat destructor has been called" << std::endl;
 
 }
 
