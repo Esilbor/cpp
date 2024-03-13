@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:48:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 17:58:38 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:39:47 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
 	this->setType("Dog");
 	std::cout << "Dog with a brain constructor has been called" << std::endl;
 }
-Dog::Dog(const Dog& otherDog) : Animal(otherDog), _brain(new Brain(*otherDog._brain))
+Dog::Dog(const Dog& otherDog) : AAnimal(otherDog), _brain(new Brain(*otherDog._brain))
 {
 	// *this = otherDog;
 	std::cout << this->getType() << " called Dog with a brain copy constructor from " << otherDog.getType()
@@ -29,7 +29,7 @@ Dog& Dog::operator=(const Dog& dogB)
 {
 	if (this != &dogB)
 	{
-		Animal::operator=(dogB);
+		AAnimal::operator=(dogB);
 		delete _brain;
 		_brain = new Brain(*dogB._brain);
 	}

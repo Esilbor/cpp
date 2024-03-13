@@ -6,19 +6,18 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:16:27 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/09 19:15:41 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:39:06 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Animal.hpp"
+#include "../include/AAnimal.hpp"
 #include "../include/Dog.hpp"
 #include "../include/Cat.hpp"
 
 int main()
 {
 	const int len = 10;
-	Animal* animalArray[len];
-	// Animal generic;
+	AAnimal* animalArray[len];
 	for (int i = 0; i < 5; i++)
 		animalArray[i] = new Dog();
 	for (int i = len / 2; i < len; i++)

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:44:55 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/11 17:46:00 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/12 12:17:25 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat& Cat::operator=(const Cat& catB)
 	if (this != &catB)
 	{
 		Animal::operator=(catB);
-		delete _brain;
+		delete _brain; // delete the old brain of the cat
 		_brain = new Brain(*catB._brain);
 	}
 	return (*this);

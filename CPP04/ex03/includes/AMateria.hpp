@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 13:23:53 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/11 08:44:09 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/13 18:16:58 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ class AMateria
 protected:
 	std::string type;
 public:
+	AMateria(std::string const & type);
+
 	AMateria();
 	~AMateria();
 	AMateria(const AMateria& otherMateria);
 	AMateria& operator=(const AMateria& materiaB);
-
-	AMateria(std::string const & type);
 
 	std::string const & getType() const; // Returns the materia type
 	virtual AMateria* clone() const = 0;

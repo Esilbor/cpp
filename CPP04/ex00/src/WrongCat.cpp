@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 18:44:55 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/11 13:19:43 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/12 11:41:09 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ WrongCat::~WrongCat()
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Miaow miaow I'm a Wrong cat and I hate everyone!" << std::endl;
+	std::cout << "Miaow miaow I'm a Wrong cat and I love everyone!" << std::endl;
 }
 

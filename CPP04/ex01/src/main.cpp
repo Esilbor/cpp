@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:16:27 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/11 17:56:56 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/12 14:33:21 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 #include "../include/Dog.hpp"
 #include "../include/Cat.hpp"
 
-// int main()
-// {
-// 	const int len = 10;
-// 	Animal* animalArray[len];
-// 	for (int i = 0; i < 5; i++)
-// 		animalArray[i] = new Dog();
-// 	for (int i = len / 2; i < len; i++)
-// 		animalArray[i] = new Cat();
-// 	for (int i = 0; i < len; i++)
-// 		animalArray[i]->makeSound();
-// 	for (int i = 0; i < len; i++)
-// 	{
-// 		delete animalArray[i];
-// 		animalArray[i] = 0;
-// 	}
-// 	return 0;
-// }
+int main()
+{
+	const int len = 10;
+	Animal* animalArray[len];
+	for (int i = 0; i < 5; i++)
+		animalArray[i] = new Dog();
+	for (int i = len / 2; i < len; i++)
+		animalArray[i] = new Cat();
+	for (int i = 0; i < len; i++)
+		animalArray[i]->makeSound();
+	for (int i = 0; i < len; i++)
+	{
+		delete animalArray[i];
+		animalArray[i] = 0;
+	}
+	return 0;
+}
 
 
 // int main()
@@ -42,37 +42,77 @@
 // return 0;
 // }
 
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
 
 //test deep copy functionality for cats
 //when a cat is copied from another it gets its own brain
 //so changing the original cat idea does not impact
 //the ideas of the copied cat
-int	main()
-{
-	Cat* catA = new Cat();
-	Dog* dogA = new Dog();
+// int	main()
+// {
+// 	Cat* catA = new Cat();
+// 	Dog* dogA = new Dog();
 
-	catA->setIdea(0, "drink milk from the baby bottle!");
-	dogA->setIdea(0, "cuddle with my master and play with my toys!");
+// 	catA->setIdea(0, "drink milk from the baby bottle!");
+// 	dogA->setIdea(0, "cuddle with my master and play with my toys!");
 
-	Cat* catB = new Cat(*catA);
-	Dog* dogB = new Dog(*dogA);
+// 	Cat* catB = new Cat(*catA);
+// 	Dog* dogB = new Dog(*dogA);
 
-	catA->setIdea(0, "sleep all day, war all night");
-	dogA->setIdea(0, "find a cat and chew it up");
+// 	catA->setIdea(0, "sleep all day, war all night");
+// 	dogA->setIdea(0, "find a cat and chew it up");
 
-	std::cout << "catA idea[0] = " << catA->getIdea(0) << std::endl;
-	std::cout << "catA idea[10] = " << catA->getIdea(10) << std::endl;
-	std::cout << "catB idea[0] = " << catB->getIdea(0) << std::endl;
+// 	std::cout << "catA idea[0] = " << catA->getIdea(0) << std::endl;
+// 	std::cout << "catA idea[10] = " << catA->getIdea(10) << std::endl;
+// 	std::cout << "catB idea[0] = " << catB->getIdea(0) << std::endl;
 
-	std::cout << "dogA idea[0] = " << dogA->getIdea(0) << std::endl;
-	std::cout << "dogB idea[0] = " << dogB->getIdea(0) << std::endl;
+// 	std::cout << "dogA idea[0] = " << dogA->getIdea(0) << std::endl;
+// 	std::cout << "dogB idea[0] = " << dogB->getIdea(0) << std::endl;
 
-	delete catA;
-	delete dogA;
+// 	delete catA;
+// 	delete dogA;
 
-	std::cout << "catB idea[0] after deleting catA = " << catB->getIdea(0) << std::endl;
+// 	std::cout << "catB idea[0] after deleting catA = " << catB->getIdea(0) << std::endl;
 
-	delete catB;
-	delete dogB;
-}
+// 	delete catB;
+// 	delete dogB;
+// }
+
+
+/*********************************************************/
+/*********************************************************/
+/*********************************************************/
+
+// int main()
+// {
+// 	Cat minou;
+// 	minou.setIdea(0, "jouer à chat");
+// 	std::cout << minou.getIdea(0) << std::endl;
+
+// 	Cat tofou;
+// 	tofou = minou;
+// 	std::cout << "Tofou idea: " << tofou.getIdea(0) << std::endl;
+
+// 	return (0);
+// }
+
+/*********************************************************/
+/*********************************************************/
+/*********************************************************/
+
+// int main()
+// {
+// 	Cat* minou = new Cat();
+// 	minou->makeSound();
+// 	std::cout << "Minou is a " << minou->getType() << std::endl;
+// 	minou->setIdea(0, "sleep on the couch");
+// 	std::cout << "Minou idea[0]: " << minou->getIdea(0) << std::endl;
+// 	Cat* tofou;
+// 	tofou = minou;
+// 	std::cout << "tofou idea[0]: " << tofou->getIdea(0) << std::endl;
+// 	delete minou;
+// 	return (0);
+// }
+
