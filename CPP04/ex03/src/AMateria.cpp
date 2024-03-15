@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:18:29 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 18:33:53 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/15 12:32:55 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ std::string const & AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-
+	std::cout << "Default AMateria used on " << target.getName() << std::endl;
 }

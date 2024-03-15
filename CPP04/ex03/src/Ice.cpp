@@ -6,12 +6,12 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 13:32:23 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 18:41:42 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/15 13:09:27 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
-#include "AMateria.hpp"
+#include "../includes/Ice.hpp"
+#include "../includes/AMateria.hpp"
 
 Ice::Ice()
 {

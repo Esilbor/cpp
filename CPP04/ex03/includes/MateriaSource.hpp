@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 11:04:13 by esilbor           #+#    #+#             */
-/*   Updated: 2024/03/15 15:00:21 by bbresil          ###   ########.fr       */
+/*   Created: 2024/03/15 14:29:44 by bbresil           #+#    #+#             */
+/*   Updated: 2024/03/15 14:42:45 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Zombie.hpp"
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-// allocate a new zombie on the heap
-// give it a name and returns it
-// to be used out of the function scope
-// zombie must be deleted
-Zombie* newZombie( std::string name )
+#include "../includes/IMateriaSource.hpp"
+
+
+class MateriaSource
 {
-	Zombie*	z = new Zombie();
-	z->setZombieName(name);
-	return (z);
-}
+private:
+	AMateria* _spellbook[4];
+	int _i;
+public:
+	MateriaSource(/* args */);
+	~MateriaSource();
+	virtual void learnMateria(AMateria*);
+	virtual AMateria* createMateria(std::string const & type);
+};
+
+
+#endif

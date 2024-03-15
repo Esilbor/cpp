@@ -6,12 +6,12 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:43:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 19:19:13 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/15 13:09:33 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
-#include "AMateria.hpp"
+#include "../includes/Cure.hpp"
+#include "../includes/AMateria.hpp"
 
 Cure::Cure()
 {
