@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:43:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/15 13:09:33 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:51:42 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cure::Cure()
 
 Cure::~Cure()
 {
-	std::cout << GREEN "Default Cure desstructor called" RESET << std::endl;
+	std::cout << GREEN "Default Cure destructor called" RESET << std::endl;
 }
 
 Cure::Cure(const Cure& otherCure)

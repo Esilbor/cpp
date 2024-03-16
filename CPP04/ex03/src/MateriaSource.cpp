@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 13:08:08 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/15 17:23:53 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 20:08:14 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,31 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-	if (_spellbook[_i] = 0)
+	if (_spellbook[_i] == 0)
 	{
 		_spellbook[_i] = m;
 		this->_i = (_i + 1) % 4;
 		std::cout << MAGENTA "the Materia " << m->getType()
-		<< "has been added to the speelbook!" RESET << std::endl;
+		<< " has been added to the speelbook!" RESET << std::endl;
+	}
+	else
+	{
+		delete (_spellbook[_i]);
+		_spellbook[_i] = m;
+		this->_i = (_i + 1) % 4;
+		std::cout << MAGENTA "the Materia " << m->getType()
+		<< " has been added to the speelbook!" RESET << std::endl;
 	}
 }
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-
+	AMateria* tmp = 0;
+	for (int i = 0; i < 4; ++i)
+	{
+		if (this->_spellbook[i] && this->_spellbook[i]->getType() == type)
+		{
+			tmp = _spellbook[i]->clone();
+		}
+	}
+	return (tmp);
 }

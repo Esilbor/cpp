@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:38:03 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 18:38:34 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:41:05 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
 	~Cure();
 	Cure(const Cure& otherCure);
 	Cure& operator=(const Cure& CureB);
-	virtual AMateria* clone() const override;
-	virtual void use(ICharacter& target) override;
+	virtual AMateria* clone() const;
+	virtual void use(ICharacter& target);
 };
 
 

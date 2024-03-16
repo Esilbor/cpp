@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 13:23:53 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 18:16:58 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:32:20 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 
+#include "../includes/ICharacter.hpp"
 // Abstract classes cannot be instanciated
 class AMateria
 {
@@ -31,7 +32,7 @@ public:
 	AMateria(std::string const & type);
 
 	AMateria();
-	~AMateria();
+	virtual ~AMateria();
 	AMateria(const AMateria& otherMateria);
 	AMateria& operator=(const AMateria& materiaB);
 

@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:46:32 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/15 17:23:12 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 20:10:57 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ Character::Character() : _i(0)
 
 Character::Character(std::string name) : _name(name), _i(0)
 {
-	std::cout << GREEN "Default Character constructor called" RESET << std::endl;
+	std::cout << GREEN "Character with the name \"" << _name << "\" called constructor" RESET << std::endl;
 }
 
 Character::~Character()
 {
-		for (int i = 0; i < 4; i++)
-		{
-			delete _inventory[i];
-			_inventory[i] = 0;
-		}
+	for (int i = 0; i < 4; i++)
+	{
+		delete _inventory[i];
+		_inventory[i] = 0;
+	}
 	std::cout << GREEN "Default Character destructor called" RESET << std::endl;
 
 }
@@ -55,22 +55,23 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	if (_inventory[_i] = 0)
-	{
-		_inventory[_i] = m;
-		this->_i = (_i + 1) % 4;
-		std::cout << MAGENTA "the Materia " << m->getType() << "has been added to "
-		<< _name << "'s inventory!" RESET << std::endl;
-	}
+	_inventory[_i] = m;
+	this->_i = (_i + 1) % 4;
+	std::cout << MAGENTA "the Materia " << m->getType() << " has been added to "
+	<< _name << "'s inventory!" RESET << std::endl;
 }
 
 void Character::unequip(int idx)
 {
-	AMateria* tmp = _inventory[idx];
+	// AMateria* tmp = _inventory[idx];
 	_inventory[idx] = 0;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
+	if (_inventory[idx])
+	{
+		_inventory[idx]->use(target);
+	}
 
 }

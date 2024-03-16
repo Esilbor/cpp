@@ -6,14 +6,14 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:18:29 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/15 12:32:55 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:25:50 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AMateria.hpp"
 #include "../includes/ICharacter.hpp"
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type) : type(type)
 {
 	std::cout << "AMateria constructor has been called" << std::endl;
 }

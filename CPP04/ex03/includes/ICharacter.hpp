@@ -6,16 +6,17 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 13:48:24 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/13 19:23:58 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/16 15:30:59 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
-#include "AMateria.hpp"
 #include <string>
 #include <iostream>
+
+class AMateria;
 
 class ICharacter
 {
