@@ -6,7 +6,7 @@
 /*   By: bbresil <bbresil@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:46:32 by bbresil           #+#    #+#             */
-/*   Updated: 2024/03/16 20:10:57 by bbresil          ###   ########.fr       */
+/*   Updated: 2024/03/17 14:44:48 by bbresil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ Character::Character() : _i(0)
 
 Character::Character(std::string name) : _name(name), _i(0)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		_inventory[i] = 0;
+	}
 	std::cout << GREEN "Character with the name \"" << _name << "\" called constructor" RESET << std::endl;
 }
 
